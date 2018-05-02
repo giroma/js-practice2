@@ -11,9 +11,10 @@ var lengthOfLongestSubstring = function(s) {
     console.log("TEMP",tempArr);
     for (var letter of sArr){
       if (tempArr.includes(letter)){
-        if (count > maxCount) {
+        if (count > maxCount) {//make sure maxCount is always the largest count
           maxCount = count
         }
+        //reset count and tempArr, shift original array, and break for loop
         sArr.shift()
         count = 0
         tempArr = []
