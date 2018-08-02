@@ -6,18 +6,18 @@ let str = "acc?7??sss?3rr1??????5"
 function question(){
   let countQ = 0
   let firstNum = 0
-  for(let i = 0; i<str.length;i++){
-    console.log(str[i], !isNaN(str[i]))
-    if (!isNaN(str[i])) {
+  for (char of str){
+    console.log(char, !isNaN(char))
+    if (!isNaN(char)) {
       console.log('number')
-      if(10-firstNum == str[i] && countQ >= 3){
+      if(10-firstNum == char && countQ >= 3){
         console.log('add to ten and count > 2');
         return true
       }
-      firstNum = +str[i]
+      firstNum = +char
       countQ = 0
     }
-    if(str[i] === '?'){
+    if(char === '?'){
       countQ++
     }
   }
