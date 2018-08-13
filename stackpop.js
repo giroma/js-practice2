@@ -1,29 +1,32 @@
-stack1 = [1,2,3,4,5]
-stack2 = []
-class Stack{
-  static push(num){
-    stack1.push(num)
+class Queue{
+  constructor() {
+     this.stack1 = [1,2,3,4,5]
+     this.stack2 = []
   }
-  static pop(){
+  push(num){
+    this.stack1.push(num)
+  }
+  pop(){
     let size = this.peek()
-    for (let i = 1; i < size; i++) {
-      stack2.push(stack1.pop())
-    }
-    stack1.pop()
     for (let i = 0; i < size-1; i++) {
-      stack1.push(stack2.pop())
+      this.stack2.push(this.stack1.pop())
     }
-    console.log('final', stack1);
-    console.log('final', stack2);
+    this.stack1.pop()
+    for (let i = 0; i < size-1; i++) {
+      this.stack1.push(this.stack2.pop())
+    }
+    console.log('final', this.stack1);
+    console.log('final', this.stack2);
   }
-  static peek(){
-  return stack1.length + stack2.length
+  peek(){
+  return this.stack1.length + this.stack2.length
   }
-
 }
 
-// Stack.peek()
-Stack.push(99)
-Stack.pop()
-Stack.pop()
+let stack = new Queue
+stack.push(99)
+stack.pop()
+stack.pop()
+stack.push(88)
+stack.pop()
 // Stack.peek()
