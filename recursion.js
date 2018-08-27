@@ -45,10 +45,8 @@ let data = [1,2,4,5,7,9,66,345,357]
 bsearch = (array, number) => {
   console.log('array',array);
   let length = array.length
-  let min = 0
   let mid = Math.floor(length/2)
-  let max = length-1
-  console.log(min, mid, max);
+  console.log(mid);
 
   if (array[mid] === number) {
     console.log('found', number);
@@ -62,6 +60,6 @@ bsearch = (array, number) => {
     array.splice(0,mid+1)
     return bsearch(array, number)
   }
-  return 'not found'
+  return 'not found' //gets triggered when array is empty and all if statements cant evaluate
 }
-console.log( bsearch(data, 360) )
+console.log( bsearch(data, 3) )
