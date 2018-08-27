@@ -44,8 +44,7 @@
 let data = [1,2,4,5,7,9,66,345,357]
 bsearch = (array, number) => {
   console.log('array',array);
-  let length = array.length
-  let mid = Math.floor(length/2)
+  let mid = Math.floor(array.length/2)
   console.log(mid);
 
   if (array[mid] === number) {
@@ -62,4 +61,4 @@ bsearch = (array, number) => {
   }
   return 'not found' //gets triggered when array is empty and all if statements cant evaluate
 }
-console.log( bsearch(data, 3) )
+console.log( bsearch(data, 66) )
