@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 //house robber second version with houses in circle
+=======
+//second version with houses in circle
+>>>>>>> 4ef7c433eb1fd34bad5714940f1c083d90a6e6e9
 //remember where to start and what to save
 
 var rob = function(nums) {
